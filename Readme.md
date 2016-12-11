@@ -48,6 +48,6 @@ Good luck!
 
 ## Files produced
 
-- A tidy dataset in file Smartphone_sensor_signals_mean_std_averages.csv (comma-delimited text)
+- A tidy dataset in file Smartphone_sensor_signals_mean_std_averages.txt (whitespace delimited text)
 - A codebook markdown file: codebook.md
 - A codebook html file: codebook.html (A css file (codebookstyle.css) is used for the layout of this file)

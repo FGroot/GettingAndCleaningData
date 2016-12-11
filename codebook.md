@@ -7,7 +7,7 @@ output: html_document
 
 Codebook
 ========
-This codebook was generated on 2016-11-11 15:53:15. 
+This codebook was generated on 2016-12-11 10:28:28. 
 
 Introduction
 ------------
@@ -141,9 +141,9 @@ str(data.final.tidy)
 
 ```
 ## Classes 'data.table' and 'data.frame':	180 obs. of  82 variables:
-##  $ activityid                                  : int  1 2 3 4 5 6 1 2 3 4 ...
-##  $ subjectid                                   : int  1 1 1 1 1 1 2 2 2 2 ...
-##  $ activityname                                : chr  "WALKING" "WALKING_UPSTAIRS" "WALKING_DOWNSTAIRS" "SITTING" ...
+##  $ ActivityId                                  : int  1 2 3 4 5 6 1 2 3 4 ...
+##  $ SubjectId                                   : int  1 1 1 1 1 1 2 2 2 2 ...
+##  $ ActivityName                                : chr  "WALKING" "WALKING_UPSTAIRS" "WALKING_DOWNSTAIRS" "SITTING" ...
 ##  $ Time_BodyAccelleration_Mean_X               : num  0.247 0.275 0.276 0.263 0.276 ...
 ##  $ Time_BodyAccelleration_Mean_Y               : num  -0.0233 -0.0231 -0.0147 -0.0243 -0.0196 ...
 ##  $ Time_BodyAccelleration_Mean_Z               : num  -0.093 -0.111 -0.11 -0.104 -0.11 ...
@@ -224,7 +224,7 @@ str(data.final.tidy)
 ##  $ Freq_BodyGyroJerkMagnitude_StdDev           : num  -0.866 -0.613 -0.991 -0.835 -0.959 ...
 ##  $ Freq_BodyGyroJerkMagnitude_MeanFreq         : num  0.2436 0.2862 0.3354 0.1843 -0.0665 ...
 ##  - attr(*, ".internal.selfref")=<externalptr> 
-##  - attr(*, "sorted")= chr  "subjectid" "activityid"
+##  - attr(*, "sorted")= chr  "SubjectId" "ActivityId"
 ```
 
 List the key variables in the data table
@@ -236,7 +236,7 @@ key(data.final.tidy)
 ```
 
 ```
-## [1] "subjectid"  "activityid"
+## [1] "SubjectId"  "ActivityId"
 ```
 
 Show a few rows of the dataset
@@ -248,7 +248,7 @@ head(data.final.tidy,2)
 ```
 
 ```
-##    activityid subjectid     activityname Time_BodyAccelleration_Mean_X
+##    ActivityId SubjectId     ActivityName Time_BodyAccelleration_Mean_X
 ## 1:          1         1          WALKING                     0.2472002
 ## 2:          2         1 WALKING_UPSTAIRS                     0.2747626
 ##    Time_BodyAccelleration_Mean_Y Time_BodyAccelleration_Mean_Z

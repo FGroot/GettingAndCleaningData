@@ -22,7 +22,6 @@ wd<-"C:/RCursus/CleaningData/pga"
 setwd(wd)
 path<-getwd()
 
-
 #File download:
 path<-paste0(path,"/data")
 url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -32,7 +31,6 @@ if (!file.exists(path)) {
   dir.create(path)
 }
 download.file(url, file.path(path, destfile))
-
 
 #File unzip: 
 unzip(paste0("./data/",destfile),exdir="./data")
@@ -136,20 +134,23 @@ data.final.no_activity_name = data.final[,!names(data.final) %in% c('activitynam
 data.final.aggregated = aggregate(data.final.no_activity_name[,!names(data.final.no_activity_name) %in% c('activityid','subjectid'),with=FALSE],
       by=list(activityid=data.final.no_activity_name$activityid, subjectid = data.final.no_activity_name$subjectid),FUN=mean)
 
-# Bind the Activity names column to the tidy dataset and put the column in front of the 
+# Bind the Activity names column to the tidy dataset and put the column in front of the rest
 data.final.tidy=merge(act.labels,data.final.aggregated,by="activityid",all=TRUE)
 
+# Rename lower case key columns
+setnames(data.final.tidy,c("activityid","activityname","subjectid"),c("ActivityId","ActivityName","SubjectId"))
+
 #set the key
-setkeyv(data.final.tidy,c("subjectid","activityid"))
+setkeyv(data.final.tidy,c("SubjectId","ActivityId"))
 
 # Reorder the columns of the tidy dataset
 allcolumns<-names(data.final.tidy)
-firstcolumns<-c("activityid","subjectid","activityname")
+firstcolumns<-c("ActivityId","SubjectId","ActivityName")
 setcolorder(data.final.tidy, c(firstcolumns, setdiff(allcolumns, firstcolumns)))
 
 # Output the data to a file
-outFile <- file.path(getwd(), "Smartphone_sensor_signals_mean_std_averages.csv")
-write.csv(data.final.tidy,outFile)
+outFile <- file.path(getwd(), "Smartphone_sensor_signals_mean_std_averages.txt")
+write.table(data.final.tidy, outFile, row.names=FALSE)
 
 # Generate the codebook
 knit("createCodebook.Rmd", output="codebook.md", encoding="ISO8859-1", quiet=TRUE)

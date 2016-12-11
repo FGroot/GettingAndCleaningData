@@ -1,0 +1,157 @@
+---
+title: "UCI HAR averages codebook"
+author: "Frank Groot"
+date: "9 november 2016"
+output: html_document
+---
+
+Codebook
+========
+This codebook was generated on `r as.character(Sys.time())`. 
+
+Introduction
+------------
+The [Smartphone_sensor_signals_mean_std_averages](./Smartphone_sensor_signals_mean_std_averages.csv) file is a tidy dataset derived from the dataset provided by the UCI in the Human Activity Recognition Using Smartphones Data Set. 
+
+Source data is available from: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
+
+[README.md](./README.md) explains how all of the scripts work and how they are connected.
+
+
+Data cleansing
+--------------
+The file Smartphone_sensor_signals_mean_std_averages.csv contains averages of test data as well as training data sets combined from the following files. 
+
+- [UCI HAR Dataset/test/subject_test.txt](./UCI HAR Dataset/test/subject_test.txt)
+- [UCI HAR Dataset/test/X_test.txt](./UCI HAR Dataset/test/X_test.txt)
+- [UCI HAR Dataset/test/y_test.txt](./UCI HAR Dataset/test/y_test.txt)
+- [UCI HAR Dataset/train/subject_train.txt](./UCI HAR Dataset/train/subject_train.txt)
+- [UCI HAR Dataset/train/X_train.txt](./UCI HAR Dataset/train/X_train.txt)
+- [UCI HAR Dataset/train/y_train.txt](./UCI HAR Dataset/train/y_train.txt)
+
+
+The header names of the 561 measurements were taken from: 
+- UCI HAR Dataset/features.txt
+
+The dataset includes only mean and standard deviation variables of each measure and was aggregated by averaging each variable for each activity and each subject. 
+The selection of mean and standard deviation variables of the measures consists of 79 columns. The key (test subject and activity columns) included, makes 82 columns in total.
+The aggregation resulted in 180 rows of data, with a unique combination of TestSubject and Activity values in each row. 
+
+The dataset characteristics:
+- Each variable is in one column.
+- Each observation of the variable is in a different row.
+- Column headers are variable names, not values
+- All observational units in the table are of the same type
+
+
+
+Variable list and descriptions
+------------------------------
+
+Variable name                               | Description
+--------------------------------------------|----------------------------------------------------------------------------
+Time_BodyAccelleration_Mean_X               |	The mean of the body acceleration of the time domain signal on the X axis.
+Time_BodyAccelleration_Mean_Y               |	The mean of the body acceleration on the Y axis.
+Time_BodyAccelleration_Mean_Z               |	The mean of the body acceleration on the Z axis.
+Time_BodyAccelleration_StdDev_X             |	The standard deviation of the body acceleration on the X axis.
+Time_BodyAccelleration_StdDev_Y             |	The standard deviation of the body acceleration on the Y axis.
+Time_BodyAccelleration_StdDev_Z             |	The standard deviation of the body acceleration on the Z axis.
+Time_GravityAccelleration_Mean_X            |	The mean of the gravity acceleration on the X axis.
+Time_GravityAccelleration_Mean_Y            |	The mean of the gravity acceleration on the Y axis.
+Time_GravityAccelleration_Mean_Z            |	The mean of the gravity acceleration on the Z axis.
+Time_GravityAccelleration_StdDev_X          |	The standard deviation of the gravity acceleration on the X axis.
+Time_GravityAccelleration_StdDev_Y          |	The standard deviation of the gravity acceleration on the Y axis.
+Time_GravityAccelleration_StdDev_Z          |	The standard deviation of the gravity acceleration on the Z axis.
+Time_BodyAccellerationJerk_Mean_X           |	The mean of the body acceleration on the X axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerk_Mean_Y           |	The mean of the body acceleration on the Y axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerk_Mean_Z           |	The mean of the body acceleration on the Z axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerk_StdDev_X         |	The standard deviation of the body acceleration on the X axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerk_StdDev_Y         |	The standard deviation of the body acceleration on the Y axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerk_StdDev_Z         |	The standard deviation of the body acceleration on the Z axis, derived in time to obtain Jerk signals.
+Time_BodyGyro_Mean_X                        |	The mean of the body angular velocity on the X axis.
+Time_BodyGyro_Mean_Y                        |	The mean of the body angular velocity on the Y axis.
+Time_BodyGyro_Mean_Z                        |	The mean of the body angular velocity on the Z axis.
+Time_BodyGyro_StdDev_X                      |	The standard deviation of the body angular velocity on the X axis.
+Time_BodyGyro_StdDev_Y                      |	The standard deviation of the body angular velocity on the Y axis.
+Time_BodyGyro_StdDev_Z                      |	The standard deviation of the body angular velocity on the Z axis.
+Time_BodyGyroJerk_Mean_X                    |	The mean of the body angular velocity on the X axis, derived in time to obtain Jerk signals.
+Time_BodyGyroJerk_Mean_Y                    |	The mean of the body angular velocity on the Y axis, derived in time to obtain Jerk signals.
+Time_BodyGyroJerk_Mean_Z                    |	The mean of the body angular velocity on the Z axis, derived in time to obtain Jerk signals.
+Time_BodyGyroJerk_StdDev_X                  |	The standard deviation of the body angular velocity on the X axis, derived in time to obtain Jerk signals.
+Time_BodyGyroJerk_StdDev_Y                  |	The standard deviation of the body angular velocity on the Y axis, derived in time to obtain Jerk signals.
+Time_BodyGyroJerk_StdDev_Z                  |	The standard deviation of the body angular velocity on the Z axis, derived in time to obtain Jerk signals.
+Time_BodyAccellerationMagnitude_Mean        |	The mean of the body acceleration magnitude, calculated using the Euclidean norm.
+Time_BodyAccellerationMagnitude_StdDev      |	The standard deviation of the body acceleration magnitude, calculated using the Euclidean norm.
+Time_GravityAccellerationMagnitude_Mean     |	The mean of the gravity acceleration magnitude.
+Time_GravityAccellerationMagnitude_StdDev   |	The standard deviation of the gravity acceleration magnitude.
+Time_BodyAccellerationJerkMagnitude_Mean    |	The mean of the body acceleration magnitude derived in time to obtain Jerk signals.
+Time_BodyAccellerationJerkMagnitude_StdDev  |	The standard deviation of the body acceleration magnitude derived in time to obtain Jerk signals.
+Time_BodyGyroMagnitude_Mean                 |	The mean of the angular velocity magnitude.
+Time_BodyGyroMagnitude_StdDev               |	The standard deviation of the angular velocity magnitude.
+Time_BodyGyroJerkMagnitude_Mean             |	The mean of the angular velocity magnitude derived in time to obtain Jerk signals.
+Time_BodyGyroJerkMagnitude_StdDev           |	The standard deviation of the angular velocity magnitude derived in time to obtain Jerk signals.
+Freq_BodyAccelleration_Mean_X               |	The mean of the body acceleration on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_Mean_Y               |	The mean of the body acceleration on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_Mean_Z               |	The mean of the body acceleration on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_StdDev_X             |	The standard deviation of the body acceleration on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_StdDev_Y             |	The standard deviation of the body acceleration on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_StdDev_Z             |	The standard deviation of the body acceleration on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_MeanFreq_X           |	The mean of the body angular velocity on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_MeanFreq_Y           |	The mean of the body angular velocity on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccelleration_MeanFreq_Z           |	The mean of the body angular velocity on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_Mean_X           |	The mean of the body acceleration on the X axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_Mean_Y           |	The mean of the body acceleration on the Y axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_Mean_Z           |	The mean of the body acceleration on the Z axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_StdDev_X         |	The standard deviation of the body acceleration on the X axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_StdDev_Y         |	The standard deviation of the body acceleration on the Y axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_StdDev_Z         |	The standard deviation of the body acceleration on the Z axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_MeanFreq_X       |	The mean weighted average of the frequency components to obtain a mean frequency of the body acceleration on the X axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_MeanFreq_Y       |	The mean weighted average of the frequency components to obtain a mean frequency of the body acceleration on the Y axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerk_MeanFreq_Z       |	The mean weighted average of the frequency components to obtain a mean frequency of the body acceleration on the Z axis, derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_Mean_X                        |	The mean of the body angular velocity on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_Mean_Y                        |	The mean of the body angular velocity on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_Mean_Z                        |	The mean of the body angular velocity on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_StdDev_X                      |	The standard deviation of the body angular velocity on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_StdDev_Y                      |	The standard deviation of the body angular velocity on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_StdDev_Z                      |	The standard deviation of the body angular velocity on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_MeanFreq_X                    |	The mean of the weighted average of the frequency components to obtain a mean frequency  of the body angular velocity on the X axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_MeanFreq_Y                    |	The mean of the weighted average of the frequency components to obtain a mean frequency  of the body angular velocity on the Y axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyro_MeanFreq_Z                    |	The mean of the weighted average of the frequency components to obtain a mean frequency  of the body angular velocity on the Z axis, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationMagnitude_Mean        |	The mean of the body acceleration magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationMagnitude_StdDev      |	The standard deviation of the body acceleration magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationMagnitude_MeanFreq    |	The mean of the weighted average of the frequency components to obtain a mean frequency of the body acceleration magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerkMagnitude_Mean    |	The mean of the body acceleration magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerkMagnitude_StdDev  |	The standard deviation of the body acceleration magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyAccellerationJerkMagnitude_MeanFreq|	The mean of the weighted average of the frequency components to obtain a mean frequency of the body acceleration magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroMagnitude_Mean                 |	The mean of the angular velocity magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroMagnitude_StdDev               |	The standard deviation of the angular velocity magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroMagnitude_MeanFreq             |	The mean of the weighted average of the frequency components to obtain a mean frequency of the angular velocity magnitude, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroJerkMagnitude_Mean             |	The mean of the angular velocity magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroJerkMagnitude_StdDev           |	The standard deviation of the angular velocity magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+Freq_BodyGyroJerkMagnitude_MeanFreq         |	The mean of the weighted average of the frequency components to obtain a mean frequency of the angular velocity magnitude derived in time to obtain Jerk signals, with a Fast Fourier Transform (FFT) applied.
+
+
+Dataset structure
+-----------------
+
+```{r}
+str(data.final.tidy)
+```
+
+List the key variables in the data table
+----------------------------------------
+
+```{r}
+key(data.final.tidy)
+```
+
+Show a few rows of the dataset
+------------------------------
+
+```{r}
+head(data.final.tidy,2)
+```
+
+
+
+
